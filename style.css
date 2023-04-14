@@ -3,7 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    outline: 1px solid limegreen !important; 
+    /*outline: 1px solid limegreen !important;*/ 
     
     /* background-color: rgb(0 100 0/0.1) !important; */
 }
