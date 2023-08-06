@@ -1,10 +1,9 @@
 const navigation = document.querySelector(".nav");
 const navToogle= document.querySelector(".imgmenu");
-const anchorPoint = document.getElementById("menubtn");
-const anchorPoints = Array.from(anchorPoint.children);
+const anchorPoints = document.querySelectorAll(".nav a");
+
 //  code for hambuger menu
-console.log(anchorPoint);
-console.log(anchorPoints);
+
 navToogle.addEventListener("click", () => {
     const visibility = navigation.getAttribute('data-visible');
     
@@ -21,10 +20,16 @@ navToogle.addEventListener("click", () => {
 
 //code for smooth scrolling
 
-anchorPoints( anchor => {anchorPoint.addEventListener("click", function(e){
+anchorPoints.forEach(anchorPoint => {
+  anchorPoint.addEventListener("click", function(e) {
     e.preventDefault();
-    anchorPoints.scrollIntoView({
-        behaviour: "smooth"
-    })
-  })
+    const targetId = this.getAttribute("href");
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
 });

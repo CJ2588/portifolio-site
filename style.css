@@ -3,6 +3,8 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    scroll-behavior: smooth;
+    /* outline: 1px solid limegreen !important; */
 }
 
 
@@ -10,6 +12,7 @@ body{
     overflow-x: hidden;
     max-width: 100%;
 }
+
 section{
     padding: 100px 200px;
 }
@@ -29,9 +32,9 @@ section{
 }
 
 /* phone responsiveness */
-@media only screen and (max-width: 530px){
+@media only screen and (max-width: 600px){
     section{
-        padding: 100px 200px;
+        padding: 100px 185px;
     }
 
 
@@ -51,7 +54,7 @@ header {
     justify-content: space-between;
     align-items: center;
     transition: 0.5s ease;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 header .nav ul {
@@ -76,7 +79,7 @@ header .nav ul li a {
 
 /* Phone Responsiveness */
 
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 600px) {
 
     header .nav{
         background-color: hsl(0, 0%, 0%, 0.5);
@@ -139,6 +142,8 @@ header .nav ul li a {
 
     .imgmenu[aria-expanded="true"] {
         background-image: url(pics/icon-close.svg);
+        position: fixed;
+        top: 100px;
     }
    
 }
@@ -159,7 +164,7 @@ header .nav ul li a {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    overflow: hidden;
+    /* overflow: hidden; */
     
 }
 
@@ -175,7 +180,7 @@ max-width: 800px;
  }   
 
  .Main .content .animated-text h3{
-    width: 900px;
+    width: 600px;
  }
 }
 
@@ -204,7 +209,6 @@ margin-left: -170px;
 .Main .content .animated-text h3 {
     color: fuchsia;
     font-size: 3em; 
-    /* em = px check online for conversion rate */
     line-height: 70px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -216,19 +220,19 @@ margin-left: -170px;
 
 @keyframes move {
     0% {
-        margin-top: 0;
+        margin-top: 0px;
     }
 
-    25% {
+    20% {
         margin-top: -75px;
     }
 
-    50% {
-        margin-top: -150px;
+    40% {
+        margin-top: -140px;
     }
 
-    75% {
-        margin-top: -75px;
+    60% {
+        margin-top: -215px;
     }
 
     100% {
@@ -237,24 +241,28 @@ margin-left: -170px;
 }
 
 /* phone responsiveness */
-@media only screen and (max-width: 530px){
+@media only screen and (max-width: 600px){
     
+    .Main{
+        overflow: hidden;
+    }
     .Main .content .animated-text{
         height: 70px;
     }
     .Main .content .animated-text h3 {
-        width: 900px;
-        line-height: 72px;
-        font-size: 2.5em;
+        width: 500px;
+        line-height: 75px;
+        font-size: 35px;
     }
-    .Main .content .animated-text h3:nth-child(3){
-    font-size: 2.5em;  
+    .Main .content .animated-text h3:nth-child(3){  
     line-height: 40px;
     width: 450px; 
     }
 
     .Main .content .animated-text h3:nth-child(1){
         animation: move 10s infinite;
+        width: 300px;
+        line-height: 35px;
     } 
 
     @keyframes move {
@@ -262,16 +270,16 @@ margin-left: -170px;
             margin-top: 0px;
         }
     
-        25% {
+        20% {
             margin-top: -75px;
         }
     
-        50% {
-            margin-top: -150px;
+        40% {
+            margin-top: -130px;
         }
     
-        75% {
-            margin-top: -75px;
+        60% {
+            margin-top: -190px;
         }
     
         100% {
@@ -331,14 +339,13 @@ margin-left: -170px;
     margin-bottom: 60px;
 }
 
-@media only screen and (max-width: 530px){
+@media only screen and (max-width: 600px){
     .section-title {
         font-size: 2em;
     }
 
     .skills .section-title{
         width: 150px;
-        top: -170px;
     }
 
     .services .section-title{
@@ -347,7 +354,7 @@ margin-left: -170px;
 
     .project .section-title{
         width: 200px;
-        top: -180px;
+        top: -90px;
     }
 }
 
@@ -379,11 +386,10 @@ margin-left: -170px;
 
 
 .about .content {
-    position: relative;
-    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .about .content .col-left .card {
@@ -392,43 +398,13 @@ margin-left: -170px;
     min-height: 450px;
 }
 
-.about img {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 100%;
-    
-}
-
-@media only screen and (max-width: 530px){
-
-    .about h2{
-        top: -80px;
-    }
-    .about .card {
-        position: relative;
-        width: 200px;
-        height: 200px;
-    }
-
-    .about img {
-        position: relative;
-        top: 20px;
-        left: 0;
-        width: 200px;
-        height: 200px;
-        object-fit: none;
-        border-radius: 50%;
-    }
-}
-
 .about .content .col-right {
     position: relative;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 30px; /* Add some margin to separate the columns */
+    display: flex; /* Use flexbox to center the content */
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: center; /* Center items horizontally */
 }
 
 .about .content .col-right .content-title {
@@ -444,53 +420,34 @@ margin-left: -170px;
     object-fit: cover;
 }
 
-/* phone reponsiveness */
-@media only screen and (max-width: 530px){
+.about img {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+/* Phone responsiveness */
+@media only screen and (max-width: 600px) {
     
-    .about .content{
-        flex-direction: column;
-        margin-top: -150px;
-    }
-
-    .col-right{
-        margin-left: -150px;
-        margin-top: -150px;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-    }
-
-    .col-right .content-title{
-        width: 300px;
-        margin-left: -90px;
-        height: 100%;
+    .about img {
+        height: 200px;
+        width: 200px;
     }
 
     .about .content .col-right .para-text{
         width: 300px;
-        margin-left: -80px;
     }
-
-    .card {
-        width: 900px;
-        height: 800px;
-        justify-content: center;
-    }
-
-    .card img{
-        width:90%;
-        height: 100%;
-        object-fit: contain;
-    }
-
 }
+/* Phone responsiveness ends */
+
 /* phone ends */
 
 /* Skill */
 
 .skills {
     background: black;
-
 }
 
 .skills .content {
@@ -500,6 +457,7 @@ margin-left: -170px;
     justify-content: space-between;
     color: #fff;
     margin-top: 20px;
+    /* gap: 9px; */
 }
 
 .skills .content .col-left  {
@@ -589,21 +547,22 @@ margin-left: -170px;
 
 
 /* Phone resposiveness */
-@media only screen and (max-width: 530px){
+@media only screen and (max-width: 600px){
     
+    .skills .content{
+        margin-left: -160px;
+    }
+
     .skills .content .col-left .content-title {
         font-size: 20px;
         width: 200px;
     }
 
     .skills .content .col-right{
-        top: 70px;
-        left: -20px;
+        width: fit-content;
     }
 
     .skills .content .col-left{
-        left: -180px;
-        top: -140px;
         width: 180px;
     }
 
@@ -611,9 +570,6 @@ margin-left: -170px;
         width: 150px;
     }
 
-    .skills .content .col-right .bar .info{
-        gap: 20px;
-    }
 }
 /* phone ends */
 /* Skill end */
@@ -671,7 +627,7 @@ transform: translateY(-10px);
 
 /* phone resoponsiveness */
 
-@media only screen and (max-width: 530px){
+@media only screen and (max-width: 600px){
 
     .services .btn{
         width: 140px;
@@ -706,28 +662,32 @@ transform: translateY(-10px);
 }
 
 .project .content {
+
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
+    align-content: center;
     margin-top: 20px;
 }
 
 .project .content .card {
-    width: 340px;
     margin: 15px;
     border-radius: 30%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .project .content .card .card-img {
     position: relative;
-    width: 100%;
+    width: 350px;
     height: 260px;
     overflow: hidden;
 }
 
 .project .content .card .card-img video{
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -740,15 +700,12 @@ transform: translateY(-10px);
 
 .project .content .card .card-img video:hover{
     transition: 2s ease-in-out;
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
 }
 
 /* phone responsiveness */
-@media only screen and (max-width: 530px){
+@media only screen and (max-width: 600px){
     
-    .project .content{
-        padding: 20px 0px;
-    }
 
     .project .Title p{
         color: #fff;
@@ -756,44 +713,14 @@ transform: translateY(-10px);
         margin-top: -100px;
         margin-bottom: 50px;
     }
-    .project .content{
-        flex-direction: column;
-        flex-wrap: nowrap;
-        margin-top: 0px;
-    }
 
+    .project .content{      
+        width: 100%;
+    }
+    
+    
+    
 
-    .project .content .card .card-img{
-        margin-left: -180px;
-    }
-
-    .project .content .card:nth-child(2){
-        margin-top: -500px;
-    }
-
-    .project .content .card:nth-child(3){
-        margin-top: -500px;
-    }
-
-    .project .content .card:nth-child(4){
-        margin-top: -500px;
-    }
-
-    .project .content .card:nth-child(5){
-        margin-top: -500px;
-    }
-
-    .project .content .card:nth-child(6){
-        margin-top: -500px;
-    }
- 
-    .project .title{
-        margin-top: -500px;
-        margin-left: -50px;
-    }
-    .project .btn{
-        width: 122px;
-}
 }
 /* phone ends */
 /* project ends */
@@ -874,7 +801,7 @@ transform: translateY(-10px);
     margin-bottom: 40px;
 }
 
-@media only screen and (max-width: 530px){
+@media only screen and (max-width: 600px){
     .contact .content .row .card {
         width: 240px;
         height: 150px;
@@ -933,36 +860,30 @@ transform: translateY(-10px);
 /* Constrution page begins */
 
 .underconstruction {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 /* Phone responsiveness */
 
-@media only screen and (max-width: 530px) {
+@media only screen and (max-width: 540px) {
     
-    .underconstruction{
-        flex-direction: row;
-    }
     .underconstruction .underconstruction_pic{
         height: 300px;
-        width: 200px;
+        width: 300px;
+        /* display: flex;
+        flex-direction: row; */
+        justify-content: center;
+    }
+
+    .underconstruction .underconstruction_pic img{
+        width: 90%;
     }
 
     .underconstruction .underconstruction_text{
-        position: relative;
         height: 200px;
-        width: 200px;
-        top: 500px;
+        width: 300px;
     }
 }
-
-/* Phone responsiveness  ends*/
-
-/* Tablet reposiveness */
-@media only screen and (max-width:1200px){
-
-}
-/* Tablet responsiveness ends */
