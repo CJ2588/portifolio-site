@@ -4,7 +4,7 @@
   box-sizing: border-box;
   font-family: Georgia, "Times New Roman", Times, serif;
   scroll-behavior: smooth;
-  outline: 1px solid limegreen !important;
+  /* outline: 1px solid limegreen !important; */
 }
 
 body {
