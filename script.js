@@ -31,3 +31,11 @@ anchorPoints.forEach((anchorPoint) => {
     }
   });
 });
+
+// Automate footer date
+
+document.addEventListener("DOMContentLoaded", function () {
+  var currentYearElement = document.getElementById("currentYear");
+  var currentYear = new Date().getFullYear();
+  currentYearElement.textContent = currentYear;
+});
